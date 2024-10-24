@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:gravity="center_vertical">
+
+        <!-- 좌측 뒤로가기 아이콘 -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="뒤로 가기"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="start" />
+
+        <!-- 가운데 제목 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자유게시판"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="국립한밭대"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 우측 검색 및 추가 메뉴 기능 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <!-- 검색 버튼 -->
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="검색"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:scaleType="fitCenter" />
+
+            <!-- 추가 메뉴 버튼 -->
+            <ImageButton
+                android:id="@+id/btnOptions"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_more_vert"
+                android:contentDescription="옵션"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 게시글 목록 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- 하단에 FloatingActionButton 추가 -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabWritePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="40dp"
+        android:text="글쓰기"
+        android:textSize="17dp"
+        app:icon="@drawable/ic_edit"
+        app:iconTint="@color/red"
+        android:contentDescription="글쓰기" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

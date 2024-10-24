@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:gravity="center_vertical">
+
+        <!-- 좌측 뒤로가기 아이콘 -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="뒤로 가기"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="start" />
+
+        <!-- 가운데 제목 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자유게시판"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="국립한밭대"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 우측 검색 및 추가 메뉴 기능 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <!-- 추가 메뉴 버튼 -->
+            <ImageButton
+                android:id="@+id/btnOptions"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_more_vert"
+                android:contentDescription="옵션"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 게시글 내용 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- 제목 표시 -->
+        <TextView
+            android:id="@+id/tvTitleDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="제목"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- 내용 표시 -->
+        <TextView
+            android:id="@+id/tvContentDetail"
+            android:hint="내용"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp" />
+
+        <!-- 내용과 댓글을 구분하는 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <!-- 댓글 리스트 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+    <!-- 댓글 입력 공간을 하단에 고정 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:layout_gravity="bottom">
+
+        <CheckBox
+            android:id="@+id/checkBoxAnonymous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="익명"
+            android:checked="true"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="댓글을 입력하세요."
+            android:background="@null"
+            android:padding="8dp"
+            android:inputType="text"/>
+
+        <ImageButton
+            android:id="@+id/btnSendComment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_send"
+            android:contentDescription="댓글 보내기"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

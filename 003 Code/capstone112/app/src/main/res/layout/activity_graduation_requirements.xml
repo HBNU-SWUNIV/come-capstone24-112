@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_check_graduation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="졸업요건 확인하기"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tv_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아래 방법 중 하나를 선택하여 본인이 졸업요건을 만족했는지 확인할 수 있어요"
+        android:layout_below="@id/tv_check_graduation"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이미지 찍기"
+        android:backgroundTint="#C0B0FF"
+        android:layout_below="@id/tv_instructions"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_upload_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이미지 업로드"
+        android:backgroundTint="#C0B0FF"
+        android:layout_below="@id/btn_take_photo"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_unit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="유닛 계산"
+        android:backgroundTint="#C0B0FF"
+        android:layout_below="@id/btn_upload_photo"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/file_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="파일 업로드"
+        android:backgroundTint="#C0B0FF"
+        android:layout_below="@id/btn_unit" />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:itemBackground="@drawable/bottom_nav_indicator"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@drawable/bottom_icon_color"
+        app:itemTextColor="@drawable/bottom_icon_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+
+</RelativeLayout>
